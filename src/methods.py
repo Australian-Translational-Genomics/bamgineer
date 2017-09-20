@@ -28,8 +28,8 @@ def initialize(results_path,haplotype_path,cancer_dir_path):
         exons_path = bamhelp.GetExons()
         reference_path = bamhelp.GetRef()
         vpath, vcf = os.path.split(vcf_path)
-        phasedvcf = "/".join([results_path, sub('.vcf$', '_phased.vcf.gz', vcf)])
-        vcftobed =  "/".join([results_path, sub('.vcf$', '.bed', vcf)])
+        phasedvcf = "/".join([results_path, sub('.vcf.gz$', '_phased.vcf.gz', vcf)])
+        vcftobed =  "/".join([results_path, sub('.vcf.gz$', '.bed', vcf)])
         
         hap1vcf = "/".join([results_path,"hap1_het.vcf"])
         hap2vcf = "/".join([results_path, "hap2_het.vcf"])

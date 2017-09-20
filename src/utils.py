@@ -259,7 +259,8 @@ def getProperPairs(inbamfn, outbamfn):
 
 def splitBed(bedfn, event):
     path, filename = os.path.split(bedfn)
-    command=  "".join(["""awk '($1 ~ "chr"){print $0 >> """ ,'"{}"'.format(event), """$1".bed"}' """, bedfn])
+    #command=  "".join(["""awk '($1 ~ "chr"){print $0 >> """ ,'"{}"'.format(event), """$1".bed"}' """, bedfn])
+    command=  "".join(["""awk '{print $0 >> """ ,'"{}chr"'.format(event), """$1".bed"}' """, bedfn])
     os.chdir(path)
     runCommand(command)
  
