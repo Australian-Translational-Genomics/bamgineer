@@ -93,10 +93,10 @@ def getVCFHaplotypes(phasedvcf, hap1, hap2):
         for line in vcfh:
             c = line.strip('\n').split("\t")
             if (len(c) == 10 ):
-                if(c[9] == '0|1:1'):
+                if(c[9].startswith('0|1:1')):
                     out_hap1.write(line)
                     continue
-                elif(c[9] == '1|0:1'):
+                elif(c[9].startswith('1|0:1')):
                      out_hap2.write(line)
                      continue
                 
